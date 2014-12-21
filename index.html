@@ -1,0 +1,35 @@
+<html ng-app="testApp">
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen"/> 
+	</head>
+	<body ng-controller="testCtrl">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4" style="word-wrap:break-word" ng-show="userDetail">
+					<h4>Response of userprofile json file</h4>
+					{{userDetail}}
+				</div>
+				<div class="col-md-4" style="word-wrap:break-word" ng-show="userfriends">
+					<h4>Response of userfriendlist json file</h4>
+					{{userfriends}}
+				</div>
+				<div class="col-md-4" style="word-wrap:break-word" ng-show="requiredInfo">
+					<h4>Combined(required) response of both json files processed from the factory</h4>
+					{{requiredInfo}}
+					<br></br>
+					<p class="text-danger">Note:Here the data is displayed after combining the response of the 1st two json files.Here the controller has no logic of merging both the calls,
+					entire logic goes inside the factory and controller is kept clean</p>
+				</div>
+				<div class="col-md-12">
+					<button ng-click="getInfo()" class="btn btn-danger">Click to see things in action</button>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>To download code and learn more visit <a href="">here<a></p>
+		</div>
+	</body>
+	<script src="js/angular.js"></script>
+	<script src="js/testApp.js"></script>
+</html>
